@@ -1,0 +1,85 @@
+@import "tailwindcss";
+
+@theme {
+  --font-serif: "Playfair Display", serif;
+  --font-sans: "Inter", sans-serif;
+
+  --color-gold-100: #F9F1D8;
+  --color-gold-200: #F0E2B6;
+  --color-gold-300: #E6D293;
+  --color-gold-400: #DCC171;
+  --color-gold-500: #D4AF37;
+  --color-gold-600: #AA8C2C;
+  --color-gold-700: #806921;
+  --color-gold-800: #554616;
+  --color-gold-900: #2B230B;
+  
+  --color-obsidian: #0a0a0a;
+  --color-charcoal: #121212;
+
+  --background-image-metallic-gold: linear-gradient(135deg, #F0E2B6 0%, #D4AF37 50%, #806921 100%);
+  --background-image-metallic-text: linear-gradient(to right, #F0E2B6, #D4AF37, #F0E2B6);
+  --background-image-luxury-dark: linear-gradient(to bottom, #0a0a0a, #121212);
+
+  @keyframes shine {
+    to { background-position: 200% center; }
+  }
+  @keyframes marquee {
+    0% { transform: translateX(0%); }
+    100% { transform: translateX(-100%); }
+  }
+
+  --animate-shine: shine 5s linear infinite;
+  --animate-marquee: marquee 25s linear infinite;
+}
+
+@variant dark (&:where(.dark, .dark *));
+
+:root {
+  --background: #fdfcf9;
+  --foreground: #121212;
+  --nav-bg: rgba(253, 252, 249, 0.6);
+  --border-color: rgba(0, 0, 0, 0.05);
+  --card-bg: rgba(255, 255, 255, 0.45);
+  --card-border: rgba(255, 255, 255, 0.8);
+  --text-muted: #555555;
+  --text-dim: #888888;
+}
+
+.dark {
+  --background: #050505;
+  --foreground: #e5e5e5;
+  --nav-bg: rgba(5, 5, 5, 0.5);
+  --border-color: rgba(255, 255, 255, 0.05);
+  --card-bg: rgba(255, 255, 255, 0.015);
+  --card-border: rgba(255, 255, 255, 0.08);
+  --text-muted: #a3a3a3;
+  --text-dim: #737373;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+}
+
+.glass-card {
+  background: var(--card-bg);
+  backdrop-filter: blur(20px) saturate(180%);
+  border: 1px solid var(--card-border);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.08);
+}
+
+.text-metallic {
+  background: linear-gradient(to right, #F9F1D8, #D4AF37, #F9F1D8);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 200% auto;
+  animation: shine 5s linear infinite;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+}
