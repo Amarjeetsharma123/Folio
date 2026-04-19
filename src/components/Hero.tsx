@@ -4,6 +4,7 @@ import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { PERSONAL_INFO } from '@/constants';
 import { ArrowDown, Eye, X } from 'lucide-react';
+import Image from 'next/image';
 
 const Hero: React.FC = () => {
   const titles = [
@@ -19,7 +20,7 @@ const Hero: React.FC = () => {
   useEffect(() => {
     // Reset image source when personal info changes to retry loading
     setImgSrc(PERSONAL_INFO.profilePic);
-  }, [PERSONAL_INFO.profilePic]);
+  }, []);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -47,12 +48,14 @@ const Hero: React.FC = () => {
         >
           <div className="absolute inset-0 rounded-full bg-gold-500/10 blur-2xl group-hover:bg-gold-500/20 transition-all duration-500"></div>
           <div className="relative p-1 rounded-full border border-gold-500/30">
-            <img
+            <Image
               src={imgSrc}
               alt={PERSONAL_INFO.name}
-              onError={(e) => {
-                const target = e.target as HTMLImageElement;
-                if (target.src !== "https://ui-avatars.com/api/?name=Amarjeet+Sharma&background=D4AF37&color=000&size=256") {
+              width={192}
+              height={192}
+              priority
+              onError={() => {
+                if (imgSrc !== "https://ui-avatars.com/api/?name=Amarjeet+Sharma&background=D4AF37&color=000&size=256") {
                   setImgSrc("https://ui-avatars.com/api/?name=Amarjeet+Sharma&background=D4AF37&color=000&size=256");
                 }
               }}

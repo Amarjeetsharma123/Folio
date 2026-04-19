@@ -6,7 +6,7 @@ export const PERSONAL_INFO = {
   email: "sharmaamarjeet239@gmail.com",
   phone: "+91 9334849363",
   profilePic: "/jeet.png", // Updated to absolute path to ensure it loads from root
-  resume: "/resume.pdf", // Place your resume.pdf in the public folder
+  resume: "/amarjeetsharma.pdf", // Matches the actual file in public folder
   summary: "A dedicated full-stack web developer with strong experience in building scalable, user-centric applications using Java, JavaScript, React.js, Node.js, and Spring Boot. Skilled in developing secure backend architectures, RESTful APIs, and interactive front-end interfaces.",
   socials: {
     linkedin: "https://www.linkedin.com/in/amarjeetsh239/",

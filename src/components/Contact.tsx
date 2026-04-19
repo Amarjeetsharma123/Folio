@@ -10,11 +10,11 @@ const Contact: React.FC = () => {
     <Section id="contact" className="bg-gradient-to-b from-background to-background/80 pb-32">
       <div className="max-w-4xl mx-auto text-center">
         <h2 className="font-serif text-5xl md:text-7xl text-foreground mb-8">
-          Let's Work <span className="text-muted dark:text-neutral-800">Together</span>
+          Let&apos;s Work <span className="text-muted dark:text-neutral-800">Together</span>
         </h2>
         <p className="text-xl text-muted font-light mb-16 max-w-2xl mx-auto">
           I am currently available for freelance projects and full-time opportunities.
-          Looking for a robust backend or a sleek frontend? Let's connect.
+          Looking for a robust backend or a sleek frontend? Let&apos;s connect.
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">

@@ -3,6 +3,7 @@ import Section from './Section';
 import { PROJECTS } from '@/constants';
 import { ExternalLink, Github, ChevronDown, ChevronUp } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
+import Image from 'next/image';
 
 const Projects: React.FC = () => {
   const [showAll, setShowAll] = useState(false);
@@ -39,9 +40,11 @@ const Projects: React.FC = () => {
               {/* Image Area */}
               <div className="h-64 overflow-hidden relative">
                 <div className="absolute inset-0 bg-background/20 group-hover:bg-transparent transition-all duration-500 z-10" />
-                <img
+                <Image
                   src={project.imagePlaceholder}
                   alt={project.title}
+                  width={600}
+                  height={400}
                   className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700 grayscale group-hover:grayscale-0"
                 />
               </div>

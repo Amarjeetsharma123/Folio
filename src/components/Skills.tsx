@@ -4,6 +4,7 @@ import React from 'react';
 import Section from './Section';
 import { SKILLS } from '@/constants';
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 
 const Skills: React.FC = () => {
   return (
@@ -30,9 +31,11 @@ const Skills: React.FC = () => {
               {skillGroup.skills.map((skill) => (
                 <div key={skill.name} className="flex items-center gap-4 group/item">
                   <div className="w-10 h-10 flex items-center justify-center bg-foreground/5 rounded-lg p-1.5 group-hover/item:bg-foreground/10 transition-colors">
-                    <img
+                    <Image
                       src={skill.logo}
                       alt={skill.name}
+                      width={40}
+                      height={40}
                       className={`w-full h-full object-contain grayscale group-hover/item:grayscale-0 transition-all duration-300 ${
                         ['Express.js', 'GitHub', 'Next.js'].includes(skill.name) ? 'dark:invert' : ''
                       }`}
